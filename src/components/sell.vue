@@ -9,58 +9,28 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">訂房人姓名*</label>  
             <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="placeholder" class="form-control input-md" type="text"  v-model="order.name">
+              <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="order.name">
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">聯絡電話</label>  
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="placeholder" class="form-control input-md" type="text"  v-model="order.phone">                  
-            </div>
-          </div>
+
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">入住日期</label>
             <div class="col-md-4">  
-              <datepicker placeholder="Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
+              <datepicker placeholder=" Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
             </div>  
           </div>
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">退房日期</label>
-            <div class="col-md-4">  
-              <datepicker placeholder="Select Date" :format="date_format" :disabled-picker="disable" v-model="order.checkout_date"></datepicker>
-            </div>  
-          </div>
-        </div>
-      </div>
-
-      <div class="room">
-        <h4>*選擇欲入住之房間</h4>
-        <div class="room-white">
-          <div class="form-group">
-            <h5 class="pull-right">{{single_price}}元</h5>
-            <label class="col-md-4 control-label" for="textinput">單人房</label>  
+            <label class="col-md-4 control-label" for="textinput">房間類型</label>
             <div class="col-md-4">
-              <label class="checkbox-inline"><input type="checkbox" value="101" v-model="room_id">101</label>
-              <label class="checkbox-inline"><input type="checkbox" value="102" v-model="room_id">102</label>
-              <label class="checkbox-inline"><input type="checkbox" value="103" v-model="room_id">103</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="room-white">
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">雙人房</label>
-            <h5 class="pull-right">{{double_price}}元</h5>  
-            <div class="col-md-4">
-              <label class="checkbox-inline"><input type="checkbox" value="201" v-model="room_id">201</label>
-              <label class="checkbox-inline"><input type="checkbox" value="202" v-model="room_id">202</label>
-              <label class="checkbox-inline"><input type="checkbox" value="203" v-model="room_id">203</label>
+              <label class="checkbox-inline"><input type="checkbox" value="1" v-model="room_type">單人房</label>
+              <label class="checkbox-inline"><input type="checkbox" value="2" v-model="room_type">雙人房</label>
             </div>
           </div>
         </div>
       </div>
 
       <button class="btn btn-primary"  v-on:click="send_order">送出訂單</button>
+      <div> {{response}} </div>
     </div>
       
 
@@ -81,26 +51,28 @@ export default {
   name: 'sell',
   data () {
     return {
-      date_format: 'yyyyMMdd',
-      post_url: 'http://localhost:8000/ethereum/booking_contract/orders/post/',
+      date_format: 'yyyy-MM-dd',
+      post_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
       order: [],
-      room_id: [],
+      room_type: [],
       single_price: 1000,
       double_price: 2000,
-      disable: true
+      disable: true,
+      response: null
     }
   },
   methods: {
     send_order: function () {
       var postdata = {
-        'name': this.order.name,
-        'room_id': this.room_id[0],
-        'checkin_date': this.order.checkin_date.toLocaleDateString()
+        'user_id': this.order.name,
+        'room_type': this.room_type[0],
+        'date': this.order.checkin_date.toISOString().substring(0, 10)
       }
       console.log(postdata.checkin_date)
       this.$http.post(this.post_url, postdata)
           .then((response) => {
             console.log(response.data + '!')
+            this.response = response
           })
       this.show = false
     }

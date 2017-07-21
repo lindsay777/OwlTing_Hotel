@@ -4,7 +4,7 @@
       <navbar></navbar>
 
       <div class="content">
-        
+        <!-- 最上排三個 -->
         <div class="row">
           
           <div class="col-sm-4">
@@ -36,7 +36,7 @@
           </div>
 
         </div>
-
+        <!-- 原本的四格 -->
         <div class="row">
 
           <div class="col-md-6">
