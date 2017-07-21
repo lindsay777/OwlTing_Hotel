@@ -3,6 +3,7 @@
     <navbar></navbar>
 
     <div class="content">
+      <!-- 以下是new order -->
       <div class="detail">
         <h4>*填寫訂房資訊</h4>
         <div class="detail-white">
@@ -12,7 +13,6 @@
               <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="order.name">
             </div>
           </div>
-
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">入住日期</label>
             <div class="col-md-4">  
@@ -28,10 +28,52 @@
           </div>
         </div>
       </div>
-
       <button class="btn btn-primary"  v-on:click="send_order">送出訂單</button>
       <div> {{response}} </div>
+      <br>
+      <!-- 以下是update order -->
+      <div>
+        <div class="detail">
+          <h4>*更改訂房資訊</h4>
+          <div class="detail-white">
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">輸入order_id*</label>  
+              <div class="col-md-4">
+                <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="update.order_id">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">訂房人姓名*</label>  
+              <div class="col-md-4">
+                <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="update.name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">入住日期</label>
+              <div class="col-md-4">  
+                <datepicker placeholder=" Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
+              </div>  
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">房間類型</label>
+              <div class="col-md-4">
+                <label class="checkbox-inline"><input type="checkbox" value="1" v-model="update_room_type">單人房</label>
+                <label class="checkbox-inline"><input type="checkbox" value="2" v-model="update_room_type">雙人房</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary"  v-on:click="send_update">送出訂單</button>
+      <div> {{response}} </div>
+      <br>
+      
+
     </div>
+  </div>
       
 
   </div>
@@ -54,7 +96,9 @@ export default {
       date_format: 'yyyy-MM-dd',
       post_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
       order: [],
+      update: [],
       room_type: [],
+      update_room_type: [],
       single_price: 1000,
       double_price: 2000,
       disable: true,
@@ -67,6 +111,21 @@ export default {
         'user_id': this.order.name,
         'room_type': this.room_type[0],
         'date': this.order.checkin_date.toISOString().substring(0, 10)
+      }
+      console.log(postdata.checkin_date)
+      this.$http.post(this.post_url, postdata)
+          .then((response) => {
+            console.log(response.data + '!')
+            this.response = response
+          })
+      this.show = false
+    },
+    send_update: function () {
+      var postdata = {
+        'order_id': this.update.order_id,
+        'user_id': this.update.name,
+        'room_type': this.update_room_type[0],
+        'date': this.update.checkin_date.toISOString().substring(0, 10)
       }
       console.log(postdata.checkin_date)
       this.$http.post(this.post_url, postdata)
