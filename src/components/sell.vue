@@ -70,7 +70,28 @@
       <button class="btn btn-primary"  v-on:click="send_update">送出訂單</button>
       <div> {{response}} </div>
       <br>
-      
+      <!-- 以下是delete order -->
+      <div class="detail">
+        <h4>*刪除整筆訂單</h4>
+        <div class="detail-white">
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">order_id*</label>  
+            <div class="col-md-4">
+              <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="remove.order_id">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">key*</label>  
+            <div class="col-md-4">
+              <input id="textinput" name="textinput" placeholder="date_roomtype" class="form-control input-md" type="text"  v-model="remove.key">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary"  v-on:click="send_delete">送出訂單</button>
+      <div> {{response}} </div>
+      <br>
 
     </div>
   </div>
@@ -97,6 +118,7 @@ export default {
       post_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
       order: [],
       update: [],
+      remove: [],
       room_type: [],
       update_room_type: [],
       single_price: 1000,
@@ -126,6 +148,19 @@ export default {
         'user_id': this.update.name,
         'room_type': this.update_room_type[0],
         'date': this.update.checkin_date.toISOString().substring(0, 10)
+      }
+      console.log(postdata.checkin_date)
+      this.$http.post(this.post_url, postdata)
+          .then((response) => {
+            console.log(response.data + '!')
+            this.response = response
+          })
+      this.show = false
+    },
+    send_delete: function () {
+      var postdata = {
+        'order_id': this.delete.order_id,
+        'key': this.delete.key
       }
       console.log(postdata.checkin_date)
       this.$http.post(this.post_url, postdata)
