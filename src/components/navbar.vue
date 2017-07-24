@@ -14,39 +14,32 @@
                       </a>
                     </li>
 
-                    <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                      <a href="#"><i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排 <span class="arrow"></span></a>
+                    <li class="active">
+                      <a href="#">
+                      <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
+                      </a>
                     </li>
-                    <ul class="sub-menu collapse" id="products">
-                        <li><a href="#">CSS3 Animation</a></li>
-                        <li><a href="#">General</a></li>
-                        <li><a href="#">Buttons</a></li>
-                        <li><a href="#">Tabs & Accordions</a></li>
-                        <li><a href="#">Typography</a></li>
-                        <li><a href="#">FontAwesome</a></li>
-                        <li><a href="#">Slider</a></li>
-                        <li><a href="#">Panels</a></li>
-                        <li><a href="#">Widgets</a></li>
-                        <li><a href="#">Bootstrap Model</a></li>
-                    </ul>
-
 
                     <li class="active">
-                      <a href="#/empty"><i class="fa fa-gift" style="font-size:19px" aria-hidden="true"></i>&nbsp;     空房查詢</a>
+                      <a href="#/sell"><i class="fa fa-gift" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單填寫</a>
                     </li>  
                     
                     <li class="active">
                       <a href="#/manage"><i class="fa fa-address-card" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單管理</a>
                     </li>
-            
-                    <li class="active">
-                      <a href="#">
-                      <i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理
-                      </a>
+
+                    <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                      <a href="#"><i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理 <span class="arrow"></span></a>
                     </li>
+                    <ul class="sub-menu collapse" id="products">
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">General</a></li>
+                        <li><a href="#">Buttons</a></li>
+                    </ul>
+            
 
                     <li class="active">
-                      <a href="#">
+                      <a href="#/empty">
                       <i class="fa fa-hotel" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務清潔
                       </a>
                     </li>
@@ -144,6 +137,7 @@ export default {
   .nav-side-menu ul .sub-menu li:hover a,
   .nav-side-menu li .sub-menu li:hover a{
     color: #73B1C4;
+
   }
   .nav-side-menu ul .sub-menu li,
   .nav-side-menu li .sub-menu li {
@@ -152,6 +146,7 @@ export default {
     line-height: 28px;
     border-bottom: 1px dashed #33425B;
     margin-left: 3px;
+    display: block;
   }
   .nav-side-menu ul .sub-menu li:hover,
   .nav-side-menu li .sub-menu li:hover {

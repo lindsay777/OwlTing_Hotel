@@ -12,7 +12,7 @@
               <div class="card-block">
                 <h3 class="card-title">退房進度</h3>
                 <p class="card-text">尚有 2 間未退房</p>
-                <a href="#/checkout" class="btn btn-primary">辦理退房</a>
+                <!-- <a href="#/checkout" class="btn btn-primary">辦理退房</a> -->
               </div>
             </div>
           </div>
@@ -21,7 +21,7 @@
               <div class="card-block">
                 <h3 class="card-title">預約入住</h3>
                 <p class="card-text">尚有 2 間未入住</p>
-                <a href="#/checkin" class="btn btn-primary">辦理入住</a>
+                <!-- <a href="#/checkin" class="btn btn-primary">辦理入住</a> -->
               </div>
             </div>
           </div>
@@ -30,11 +30,10 @@
               <div class="card-block">
                 <h3 class="card-title">今日空房</h3>
                 <p class="card-text">尚有 12 間空房</p>
-                <a href="#/sell" class="btn btn-primary">現場銷售</a>
+                <!-- <a href="#/sell" class="btn btn-primary">現場銷售</a> -->
               </div>
             </div>
           </div>
-
         </div>
         <!-- 原本的四格 -->
         <div class="row">

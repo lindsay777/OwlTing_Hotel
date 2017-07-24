@@ -36,55 +36,55 @@
         </div>
       </div>
 
-        <div class="detail">
-          <h4>*修改訂單</h4>
-          <div class="detail-white">
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">order_id*</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.order_id">
-              </div>
+      <!-- <div class="detail">
+        <h4>*修改訂單</h4>
+        <div class="detail-white">
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">order_id*</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.order_id">
             </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">name</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.name">                  
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">room_id</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.room_id">                  
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">people</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.number_of_people">                  
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">price</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.price">                  
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">date</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.date">                  
-              </div>
-            </div>
-            <div class="form-group row">
-              <label class="col-md-2 control-label" for="textinput">time</label>  
-              <div class="col-md-8">
-                <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.time">                  
-              </div>
-            </div>
-
-            <button class="btn btn-primary"  v-on:click="search_data">確認送出</button>   
           </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">name</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.name">                  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">room_id</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.room_id">                  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">people</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.number_of_people">                  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">price</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.price">                  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">date</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.date">                  
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-2 control-label" for="textinput">time</label>  
+            <div class="col-md-8">
+              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.time">                  
+            </div>
+          </div>
+
+          <button class="btn btn-primary"  v-on:click="search_data">確認送出</button>   
         </div>
+      </div> -->
     </div>
   </div>
 </template>

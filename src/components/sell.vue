@@ -8,7 +8,7 @@
         <h4>*填寫訂房資訊</h4>
         <div class="detail-white">
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">訂房人姓名*</label>  
+            <label class="col-md-4 control-label" for="textinput">訂房人姓名</label>  
             <div class="col-md-4">
               <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="order.name">
             </div>
@@ -16,7 +16,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">入住日期</label>
             <div class="col-md-4">  
-              <datepicker placeholder=" Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
+              <datepicker placeholder="  Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
             </div>  
           </div>
           <div class="form-group">
@@ -32,37 +32,35 @@
       <div> {{response}} </div>
       <br>
       <!-- 以下是update order -->
-      <div>
-        <div class="detail">
-          <h4>*更改訂房資訊</h4>
-          <div class="detail-white">
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">輸入order_id*</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="update.order_id">
-              </div>
+      <div class="detail">
+        <h4>*更改訂房資訊</h4>
+        <div class="detail-white">
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">輸入order_id</label>
+            <div class="col-md-4">
+              <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="update.order_id">
             </div>
+          </div>
 
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">訂房人姓名*</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="update.name">
-              </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">訂房人姓名</label>  
+            <div class="col-md-4">
+              <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="update.name">
             </div>
+          </div>
 
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">入住日期</label>
-              <div class="col-md-4">  
-                <datepicker placeholder=" Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
-              </div>  
-            </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">入住日期</label>
+            <div class="col-md-4">  
+              <datepicker placeholder="  Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
+            </div>  
+          </div>
 
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">房間類型</label>
-              <div class="col-md-4">
-                <label class="checkbox-inline"><input type="checkbox" value="1" v-model="update_room_type">單人房</label>
-                <label class="checkbox-inline"><input type="checkbox" value="2" v-model="update_room_type">雙人房</label>
-              </div>
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="textinput">房間類型</label>
+            <div class="col-md-4">
+              <label class="checkbox-inline"><input type="checkbox" value="1" v-model="update_room_type">單人房</label>
+              <label class="checkbox-inline"><input type="checkbox" value="2" v-model="update_room_type">雙人房</label>
             </div>
           </div>
         </div>
@@ -75,14 +73,13 @@
         <h4>*刪除整筆訂單</h4>
         <div class="detail-white">
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">order_id*</label>  
+            <label class="col-md-4 control-label" for="textinput">輸入order_id</label>  
             <div class="col-md-4">
               <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="remove.order_id">
             </div>
           </div>
-
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">key*</label>  
+            <label class="col-md-4 control-label" for="textinput">輸入key</label>  
             <div class="col-md-4">
               <input id="textinput" name="textinput" placeholder="date_roomtype" class="form-control input-md" type="text"  v-model="remove.key">
             </div>
@@ -210,6 +207,7 @@ export default {
     width: 85%;
     height: 100%;
     position: fixed;
+    overflow-y: scroll;
     padding: 40px;
     background-color: #edf0f5;
   }
