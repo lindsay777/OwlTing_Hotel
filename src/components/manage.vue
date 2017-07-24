@@ -4,37 +4,31 @@
  
     <div class="content">
       <div class="detail">
-        <h4>*訂單資料</h4>
+        <h4>*訂單資料列表</h4>
         <div class="detail-white">
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput"> </label>  
             <div class="col-md-4">
-              <button class="btn btn-primary"  v-on:click="search_data">列出全部</button>
               <br>
               <table class="table table-condensed">
                 <tr>
                   <th>order_id</th>
-                  <th>name</th>
-                  <th>room_id</th>
-                  <th>people</th>
-                  <th>price</th>
+                  <th>user_id</th>
                   <th>date</th>
-                  <th>time</th>
+                  <th>room_type</th>
                 </tr>
                 <tr v-for="r in Data">
                   <td>{{ r.order_id }}</td>
-                  <td>{{ r.name }}</td>
-                  <td>{{ r.room_id }}</td>
-                  <td>{{ r.number_of_people }}</td>
-                  <td>{{ r.price }}</td>
+                  <td>{{ r.user_id }}</td>
                   <td>{{ r.date }}</td>
-                  <td>{{ r.time }}</td>
+                  <td>{{ r.room_type }}</td>
                 </tr>
               </table>
             </div>
           </div>
         </div>
       </div>
+      <button class="btn-sm btn-primary"  v-on:click="search_data">列出全部</button>
 
       <!-- <div class="detail">
         <h4>*修改訂單</h4>
@@ -106,8 +100,8 @@ export default {
   data () {
     return {
       date_format: 'yyyyMMdd',
-      get_url: 'http://localhost:8000/ethereum/booking_contract/orders/list_all/',
-      update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update',
+      get_url: 'http://localhost:8000/ethereum/booking_contract/orders/order_detail/',
+      // update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update',
       search: [],
       Data: [],
       order: [],

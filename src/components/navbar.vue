@@ -32,9 +32,9 @@
                       <a href="#"><i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理 <span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">General</a></li>
-                        <li><a href="#">Buttons</a></li>
+                        <li><a href="#">付款狀況</a></li>
+                        <li><a href="#">入住狀況</a></li>
+                        <li><a href="#">設備報修</a></li>
                     </ul>
             
 

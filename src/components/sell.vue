@@ -81,7 +81,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">輸入key</label>  
             <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="date_roomtype" class="form-control input-md" type="text"  v-model="remove.key">
+              <input id="textinput" name="textinput" placeholder="Date_RoomType" class="form-control input-md" type="text"  v-model="remove.key">
             </div>
           </div>
         </div>
