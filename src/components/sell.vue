@@ -115,7 +115,9 @@ export default {
   data () {
     return {
       date_format: 'yyyy-MM-dd',
-      post_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
+      order_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
+      update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update_order/',
+      delete_url: 'http://localhost:8000/ethereum/booking_contract/orders/delete_order/',
       order: [],
       update: [],
       remove: [],
@@ -135,7 +137,7 @@ export default {
         'date': this.order.checkin_date.toISOString().substring(0, 10)
       }
       console.log(postdata.checkin_date)
-      this.$http.post(this.post_url, postdata)
+      this.$http.post(this.order_url, postdata)
           .then((response) => {
             console.log(response.data + '!')
             this.response = response
@@ -150,7 +152,7 @@ export default {
         'date': this.update.checkin_date.toISOString().substring(0, 10)
       }
       console.log(postdata.checkin_date)
-      this.$http.post(this.post_url, postdata)
+      this.$http.post(this.update_url, postdata)
           .then((response) => {
             console.log(response.data + '!')
             this.response = response
@@ -159,11 +161,11 @@ export default {
     },
     send_delete: function () {
       var postdata = {
-        'order_id': this.delete.order_id,
-        'key': this.delete.key
+        'order_id': this.remove.order_id,
+        'key': this.remove.key
       }
       console.log(postdata.checkin_date)
-      this.$http.post(this.post_url, postdata)
+      this.$http.post(this.delete_url, postdata)
           .then((response) => {
             console.log(response.data + '!')
             this.response = response
