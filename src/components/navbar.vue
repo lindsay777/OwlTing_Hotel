@@ -15,7 +15,7 @@
                     </li>
 
                     <li class="active">
-                      <a href="#">
+                      <a href="#/Room">
                       <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
                       </a>
                     </li>

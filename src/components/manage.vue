@@ -17,18 +17,18 @@
                   <th>date</th>
                   <th>room_type</th>
                 </tr>
-                <tr v-for="r in Data">
-                  <td>{{ r.order_id }}</td>
-                  <td>{{ r.user_id }}</td>
-                  <td>{{ r.date }}</td>
-                  <td>{{ r.room_type }}</td>
+                <tr v-for="data in Data">
+                  <td>{{ data.order_id }}</td>
+                  <td>{{ data.user_id }}</td>
+                  <td>{{ data.date }}</td>
+                  <td>{{ data.room_type }}</td>
                 </tr>
               </table>
             </div>
           </div>
         </div>
       </div>
-      <button class="btn-sm btn-primary"  v-on:click="search_data">列出全部</button>
+      <button class="btn-sm btn-primary"  v-on:click="search_data(data)">列出全部</button>
 
       <!-- <div class="detail">
         <h4>*修改訂單</h4>
