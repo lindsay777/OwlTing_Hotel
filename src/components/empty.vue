@@ -101,7 +101,7 @@
 
         <!-- 以下是delete order -->
         <div class="detail">
-          <h4>*刪除整筆訂單</h4>
+          <h4>*刪除房間資料</h4>
           <div class="detail-white">
 
             <div class="form-group">
