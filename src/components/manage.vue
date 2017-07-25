@@ -6,29 +6,28 @@
       <div class="detail">
         <h4>*訂單資料列表</h4>
         <div class="detail-white">
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput"> </label>  
-            <div class="col-md-4">
-              <br>
-              <table class="table table-condensed">
-                <tr>
-                  <th>order_id</th>
-                  <th>user_id</th>
-                  <th>date</th>
-                  <th>room_type</th>
-                </tr>
-                <tr v-for="data in Data">
-                  <td>{{ data.order_id }}</td>
-                  <td>{{ data.user_id }}</td>
-                  <td>{{ data.date }}</td>
-                  <td>{{ data.room_type }}</td>
-                </tr>
-              </table>
-            </div>
+          <div class="form-group">           
+            <br>
+            <table class="table table-condensed">
+              <tr>
+                <th>order_id</th>
+                <th>user_id</th>
+                <th>date</th>
+                <th>room_type</th>
+              </tr>
+              <tr v-for="data in Data">
+                <td>{{ data.fields.order_id }}</td>
+                <td>{{ data.fields.user_id }}</td>
+                <td>{{ data.fields.date }}</td>
+                <td>{{ data.fields.room_type }}</td>
+                <td><button class="btn-sm btn-primary"  v-on:click="number()">安排房號</button></td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
-      <button class="btn-sm btn-primary"  v-on:click="search_data(data)">列出全部</button>
+      <button class="btn-sm btn-primary"  v-on:click="search_data()">列出全部</button>
+      <div> {{ Data }} </div>
 
       <!-- <div class="detail">
         <h4>*修改訂單</h4>
@@ -104,7 +103,7 @@ export default {
       // update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update',
       search: [],
       Data: [],
-      order: [],
+      // order: [],
       single_price: 1000,
       double_price: 2000,
       disable: true

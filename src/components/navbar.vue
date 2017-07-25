@@ -28,8 +28,14 @@
                       <a href="#/manage"><i class="fa fa-address-card" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單管理</a>
                     </li>
 
+                    <li class="active">
+                      <a href="#/empty">
+                      <i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理
+                      </a>
+                    </li>
+
                     <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                      <a href="#"><i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理 <span class="arrow"></span></a>
+                      <a href="#"><i class="fa fa-hotel" style="font-size:19px" aria-hidden="true"></i>&nbsp;      房務清潔<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
                         <li><a href="#">付款狀況</a></li>
@@ -37,12 +43,6 @@
                         <li><a href="#">設備報修</a></li>
                     </ul>
             
-
-                    <li class="active">
-                      <a href="#/empty">
-                      <i class="fa fa-hotel" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務清潔
-                      </a>
-                    </li>
                 </ul>
          </div>
       </div>
