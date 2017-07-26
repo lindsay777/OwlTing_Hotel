@@ -91,6 +91,8 @@ import Navbar from './navbar'
 import Datepicker from 'vuejs-datepicker'
 // var $ = window.jQuery = require('../../node_modules/jquery')
 
+// import bulma from 'bulma'
+
 export default {
   components: {
     Datepicker,

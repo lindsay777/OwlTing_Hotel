@@ -1,53 +1,77 @@
 <template>
     <div class="sell">
-
-      <div class="nav-side-menu">
-        <div class="brand">奧丁丁旅館</div>
-        <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
       
-            <div class="menu-list">
-      
-                <ul id="menu-content" class="menu-content collapse out">
-                    <li class="active">
-                      <a href="#/home">
-                      <i class="fa fa-home" style="font-size:19px" aria-hidden="true"></i>&nbsp;     櫃檯接待
-                      </a>
-                    </li>
+      <h3 class="title is-3">奧丁丁旅館</h3>
 
-                    
+      <aside class="menu">
+        <p class="menu-label">General</p>
+        <ul class="menu-list">
 
-                    <li class="active">
-                      <a href="#/sell"><i class="fa fa-gift" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單填寫</a>
-                    </li>  
-                    
-                    <li class="active">
-                      <a href="#/manage"><i class="fa fa-address-card" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單管理</a>
-                    </li>
+          <li>
+            <a href="#/home"><i class="fa fa-home" style="font-size:19px" aria-hidden="true"></i>&nbsp;     櫃檯接待
+            </a>
+          </li>
+        </ul>
+        <br>
 
-                    <li class="active">
-                      <a href="#/room">
-                      <i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理
-                      </a>
-                    </li>
+        <p class="menu-label">Customers</p>
+        <ul class="menu-list">
 
-                    <li class="active">
-                      <a href="#/empty">
-                      <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
-                      </a>
-                    </li>
+          <li>
+            <a href="#/sell"><i class="fa fa-gift" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單填寫
+            </a>
+            <!-- <ul>
+              <li><a>填寫訂房資訊</a></li>
+              <li><a>更改訂房資訊</a></li>
+              <li><a>刪除整筆訂單</a></li>
+            </ul> -->
+          </li>  
+          
+          <li>
+            <a href="#/manage"><i class="fa fa-address-card" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單管理
+            </a>
+          </li>
+        </ul>
+        <br>
 
-                    <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                      <a href="#"><i class="fa fa-hotel" style="font-size:19px" aria-hidden="true"></i>&nbsp;      房務清潔<span class="arrow"></span></a>
-                    </li>
-                    <ul class="sub-menu collapse" id="products">
-                        <li><a href="#">付款狀況</a></li>
-                        <li><a href="#">入住狀況</a></li>
-                        <li><a href="#">設備報修</a></li>
-                    </ul>
-            
-                </ul>
-         </div>
-      </div>
+        <p class="menu-label">Rooms</p>
+        <ul class="menu-list">
+
+          <li>
+            <a href="#/room">
+            <i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理
+            </a>
+          </li>
+
+          <li>
+            <a href="#/empty">
+            <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
+            </a>
+            <!-- <ul>
+              <li><a>新增房間</a></li>
+              <li><a>更改房間</a></li>
+              <li><a>刪除房間</a></li>
+            </ul> -->
+          </li>
+        </ul>
+        <br>
+
+        <p class="menu-label">Administration</p>
+        <ul class="menu-list">
+
+          <li>
+            <a href="#">
+            <i class="fa fa-hotel" style="font-size:19px" aria-hidden="true"></i>&nbsp;      房務清潔
+            </a>
+            <ul>
+              <li><a>付款狀況</a></li>
+              <li><a>入住狀況</a></li>
+              <li><a>設備報修</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </aside>
       
     </div>
 </template>
