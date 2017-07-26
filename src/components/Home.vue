@@ -120,8 +120,10 @@ export default {
     top: 0px;
     left: 15%;
     width: 85%;
+    height: 100%;
     position: fixed;
-    padding: 20px;
+    padding: 40px;
+    background-color: #edf0f5;
   }
 
   /*right side*/

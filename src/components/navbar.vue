@@ -14,11 +14,7 @@
                       </a>
                     </li>
 
-                    <li class="active">
-                      <a href="#/Room">
-                      <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
-                      </a>
-                    </li>
+                    
 
                     <li class="active">
                       <a href="#/sell"><i class="fa fa-gift" style="font-size:19px" aria-hidden="true"></i>&nbsp;     訂單填寫</a>
@@ -29,8 +25,14 @@
                     </li>
 
                     <li class="active">
-                      <a href="#/empty">
+                      <a href="#/room">
                       <i class="fa fa-user-circle-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房務管理
+                      </a>
+                    </li>
+
+                    <li class="active">
+                      <a href="#/empty">
+                      <i class="fa fa-address-book-o" style="font-size:19px" aria-hidden="true"></i>&nbsp;     房號安排
                       </a>
                     </li>
 

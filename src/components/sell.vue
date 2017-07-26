@@ -28,7 +28,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary"  v-on:click="send_order">送出訂單</button>
+      <button class="btn-sm btn-primary"  v-on:click="send_order">送出訂單</button>
       <div> {{response}} </div>
       <br>
       <!-- 以下是update order -->
@@ -65,7 +65,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary"  v-on:click="send_update">送出訂單</button>
+      <button class="btn-sm btn-primary"  v-on:click="send_update">送出訂單</button>
       <div> {{response}} </div>
       <br>
       <!-- 以下是delete order -->
@@ -86,7 +86,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn-primary"  v-on:click="send_delete">送出訂單</button>
+      <button class="btn-sm btn-primary"  v-on:click="send_delete">送出訂單</button>
       <div> {{response}} </div>
       <br>
 
