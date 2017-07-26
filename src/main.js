@@ -12,6 +12,10 @@ import 'bootstrap/dist/js/bootstrap'
 // font-awesome
 import 'font-awesome/css/font-awesome.min.css'
 
+// bulma
+import bulma from 'bulma'
+Vue.use(bulma)
+
 // VueResource
 import VueResource from 'vue-resource'
 Vue.use(VueResource)

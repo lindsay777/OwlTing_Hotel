@@ -36,7 +36,7 @@
           </div>
         </div>
         <!-- 原本的四格 -->
-        <div class="row">
+        <!-- <div class="row"> -->
 
           <div class="col-md-6">
             <div class="card text-center room">
@@ -75,7 +75,7 @@
 
           </div>
 
-        </div>
+        <!-- </div> -->
 
       </div>
 
