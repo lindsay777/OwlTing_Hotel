@@ -40,63 +40,39 @@
 
           <div class="col-md-6">
             <div class="card text-center room">
-              <div class="card-header">
-                單人房
-              </div>
+              <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <p class="card-text">內容</p>
                 <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-              <div class="card-footer text-muted">
-                還有 3 間空房
               </div>
             </div>
 
             <div class="card text-center room">
-              <div class="card-header">
-                雙人房
-              </div>
+              <div class="card-header">雙人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <p class="card-text">內容</p>
                 <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-              <div class="card-footer text-muted">
-                還有 3 間空房
               </div>
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="card text-center room">
-              <div class="card-header">
-                三人房
-              </div>
+              <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <p class="card-text">內容</p>
                 <a href="#" class="btn btn-primary">查看房型</a>
               </div>
-              <div class="card-footer text-muted">
-                還有 3 間空房
-              </div>
             </div>
-          
 
             <div class="card text-center room">
-              <div class="card-header">
-                四人房
-              </div>
+              <div class="card-header">雙人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <p class="card-text">內容</p>
                 <a href="#" class="btn btn-primary">查看房型</a>
               </div>
-              <div class="card-footer text-muted">
-                還有 3 間空房
-              </div>
             </div>
+
           </div>
 
         </div>
@@ -105,6 +81,7 @@
 
     </div>
 </template>
+
 
 <script>
 

@@ -100,10 +100,8 @@ export default {
     return {
       date_format: 'yyyyMMdd',
       get_url: 'http://localhost:8000/ethereum/booking_contract/orders/order_detail/',
-      // update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update',
       search: [],
       Data: [],
-      // order: [],
       single_price: 1000,
       double_price: 2000,
       disable: true

@@ -4,81 +4,47 @@
       <navbar></navbar>
 
       <div class="content">
-        <!-- 最上排三個 -->
-        <div class="row">
-          
-          <div class="col-sm-4">
-            <div class="card room-top">
-              <div class="card-block">
-                <h3 class="card-title">退房進度</h3>
-                <p class="card-text">尚有 2 間未退房</p>
-                <!-- <a href="#/checkout" class="btn btn-primary">辦理退房</a> -->
-              </div>
+
+        <!-- <div class="detail">
+          <h4>*查詢空房</h4>
+
+          <div class="detail-white">
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">查詢目前已有預定的日期</label>
             </div>
+            <button class="btn btn-primary"  v-on:click="search_date">點擊查詢</button>
+            <div v-for="item of Data">{{ item }}</div>
+   
           </div>
-          <div class="col-sm-4">
-            <div class="card room-top">
-              <div class="card-block">
-                <h3 class="card-title">預約入住</h3>
-                <p class="card-text">尚有 2 間未入住</p>
-                <!-- <a href="#/checkin" class="btn btn-primary">辦理入住</a> -->
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card room-top">
-              <div class="card-block">
-                <h3 class="card-title">今日空房</h3>
-                <p class="card-text">尚有 12 間空房</p>
-                <!-- <a href="#/sell" class="btn btn-primary">現場銷售</a> -->
-              </div>
+        </div> -->
+
+        <div class="detail">
+          <h4>*目前房況列表</h4>
+
+          <div class="detail-white">
+            <div class="form-group">
+              <br>
+              <table class="table table-condensed">
+                <tr>
+                  <th>key(日期_房型)</th>
+                  <th>total</th>
+                  <th>soldout</th>
+                </tr>
+                <tr v-for="data in Data">
+                  <td>{{ data.fields.key }}</td>
+                  <td>{{ data.fields.total }}</td>
+                  <td>{{ data.fields.soldout }}</td>
+                </tr>
+              </table>
             </div>
           </div>
         </div>
-        <!-- 原本的四格 -->
-        <div class="row">
+        <button class="btn-sm btn-primary"  v-on:click="search_data()">列出全部</button>
+        <div> {{ Data }} </div>
+        <br>
 
-          <div class="col-md-6">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-            </div>
-
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-            </div>
-
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
 
       </div>
-
     </div>
 </template>
 
@@ -86,43 +52,75 @@
 
 import Navbar from './navbar'
 
+// import toastr from 'toastr'
+import Datepicker from 'vuejs-datepicker'
+// var $ = window.jQuery = require('../../node_modules/jquery')
+
 export default {
-  name: 'home',
   components: {
+    Datepicker,
     Navbar
   },
+  name: 'room',
   data () {
     return {
-      // msg: 'Welcome to Home Page'
+      date_format: 'yyyyMMdd',
+      get_url: 'http://localhost:8000/ethereum/booking_contract/orders/room_detail/',
+      search: [],
+      Data: [],
+      disable: true
     }
   },
   methods: {
+    search_data: function () {
+      this.$http.get(this.get_url)
+          .then((response) => {
+            this.Data = response.data
+          })
+          .catch(function (response) {
+            console.log(response)
+          })
+    }
   }
 }
 
 </script>
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   
   /*right side*/
-
-  .room-top{
-    margin-bottom: 20px;
+  .radio-inline,
+  .checkbox-inline{
+    margin-right: 10px;
   }
 
-  .room{
-    margin-bottom: 20px;
+  .detail,
+  .room {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .content h4{
+    color: #6a6c6f;
+  }
+
+  .detail-white,
+  .room-white {
+    color: #768399;
+    background-color: white;
+    padding: 10px;
+    padding-left: 100px;
   }
 
   .content{
     top: 0px;
     left: 15%;
     width: 85%;
+    height: 100%;
     position: fixed;
-    padding: 20px;
+    padding: 40px;
+    background-color: #edf0f5;
   }
 
   /*right side*/
-
 </style>
