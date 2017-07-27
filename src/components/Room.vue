@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <button class="btn-sm btn-primary"  v-on:click="search_data()">列出全部</button>
+        <button class="button is-primary is-focused"  v-on:click="search_data()">列出全部</button>
         <div> {{ Data }} </div>
         <br>
 

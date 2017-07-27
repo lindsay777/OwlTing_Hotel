@@ -108,6 +108,10 @@ export default {
 <style scoped>
   /*side menu*/
 
+  .menu-list a{
+    text-decoration: none;
+  }
+
   .title{
     /*background-color: #73B1C4;*/
     top: 50px;

@@ -43,7 +43,7 @@
               <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
+                <a href="#" class="button is-primary is-focused">查看房型</a>
               </div>
             </div>
 
@@ -51,7 +51,7 @@
               <div class="card-header">雙人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
+                <a href="#" class="button is-primary is-focused">查看房型</a>
               </div>
             </div>
           </div>
@@ -61,7 +61,7 @@
               <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
+                <a href="#" class="button is-primary is-focused">查看房型</a>
               </div>
             </div>
 
@@ -69,7 +69,7 @@
               <div class="card-header">雙人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="btn btn-primary">查看房型</a>
+                <a href="#" class="button is-primary is-focused">查看房型</a>
               </div>
             </div>
 

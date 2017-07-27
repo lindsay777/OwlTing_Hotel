@@ -19,7 +19,7 @@
           <div class="form-group">
             <label class="control-label" for="textinput">入住日期</label>
             <div class="control has-icons-left">
-              <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
+              <datepicker class="input datepicker" placeholder="Select Date" format="date_format" v-model="order.checkin_date"></datepicker>
               <span class="icon is-small is-left">
                 <i class="fa fa-calendar"></i>
               </span>
@@ -40,7 +40,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-sm btn-primary"  v-on:click="send_order">送出訂單</button>
+      <button class="button is-primary is-focused"  v-on:click="send_order">送出訂單</button>
       <div> {{response}} </div>
       <br>
       <!-- 以下是update order -->
@@ -70,7 +70,7 @@
           <div class="form-group">
             <label class="control-label" for="textinput">入住日期</label>
             <div class="control has-icons-left">
-              <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
+              <datepicker class="input" placeholder="Select Date" format="date_format" v-model="update.checkin_date"></datepicker>
               <span class="icon is-small is-left">
                 <i class="fa fa-calendar"></i>
               </span>
@@ -92,7 +92,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-sm btn-primary"  v-on:click="send_update">送出訂單</button>
+      <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
       <div> {{response}} </div>
       <br>
       <!-- 以下是delete order -->
@@ -109,7 +109,7 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label" for="textinput">輸入order_id</label>
+            <label class="control-label" for="textinput">輸入key</label>
             <div class="control has-icons-left">
               <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
               <span class="icon is-small is-left">
@@ -119,7 +119,7 @@
           </div>
         </div>
       </div>
-      <button class="btn-sm btn-primary"  v-on:click="send_delete">送出訂單</button>
+      <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
       <div> {{response}} </div>
       <br>
 
@@ -211,6 +211,7 @@ export default {
 <style scoped>
   
   /*right side*/
+
   .radio-inline,
   .checkbox-inline{
     margin-right: 10px;

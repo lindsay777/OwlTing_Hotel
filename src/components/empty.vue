@@ -48,22 +48,28 @@
           <div class="detail-white">
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">輸入key</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Date_RoomType ex. 2017-08-01_1" class="form-control input-md" type="text"  v-model="order.key">
+              <label class="control-label" for="textinput">輸入key</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Date_RoomType ex. 2017-08-01_1" class="input" type="text"  v-model="order.key">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-key"></i>
+                </span>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">總房間數</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Total" class="form-control input-md" type="text"  v-model="order.total">
+              <label class="control-label" for="textinput">總房間數</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="order.total">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-institution"></i>
+                </span>
               </div>
             </div>
             
           </div>
         </div>
-        <button class="btn-sm btn-primary"  v-on:click="send_order">送出資料</button>
+        <button class="button is-primary is-focused"  v-on:click="send_order">送出資料</button>
         <div> {{response}} </div>
         <br>
 
@@ -73,29 +79,38 @@
           <div class="detail-white">
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">輸入key</label>
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Key" class="form-control input-md" type="text"  v-model="update.key">
+              <label class="control-label" for="textinput">輸入key</label>
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Key" class="input" type="text"  v-model="update.key">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-key"></i>
+                </span>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">總房間數</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Total" class="form-control input-md" type="text"  v-model="update.total">
+              <label class="control-label" for="textinput">總房間數</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="update.total">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-institution"></i>
+                </span>
               </div>
             </div>
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">已售出房間數</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Soldout" class="form-control input-md" type="text"  v-model="update.soldout">
+              <label class="control-label" for="textinput">已售出房間數</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Soldout" class="input" type="text"  v-model="update.soldout">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-check-square-o"></i>
+                </span>
               </div>
             </div>
 
           </div>
         </div>
-        <button class="btn-sm btn-primary"  v-on:click="send_update">送出訂單</button>
+        <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
         <div> {{response}} </div>
         <br>
 
@@ -105,15 +120,18 @@
           <div class="detail-white">
 
             <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">輸入key</label>  
-              <div class="col-md-4">
-                <input id="textinput" name="textinput" placeholder="Date_RoomType" class="form-control input-md" type="text"  v-model="remove.key">
+              <label class="control-label" for="textinput">輸入key</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-key"></i>
+                </span>
               </div>
             </div>
 
           </div>
         </div>
-        <button class="btn-sm btn-primary"  v-on:click="send_delete">送出訂單</button>
+        <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
         <div> {{response}} </div>
         <br>
 

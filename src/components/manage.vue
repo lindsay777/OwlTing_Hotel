@@ -21,14 +21,14 @@
                 <td>{{ data.fields.user_id }}</td>
                 <td>{{ data.fields.date }}</td>
                 <td>{{ data.fields.room_type }}</td>
-                <td><button class="button is-warning is-focus"  v-on:click="number()">安排房號</button></td>
-                <td><button class="button is-danger is-focus"  v-on:click="number()">刪除訂單</button></td>
+                <td><button class="button is-warning is-focus" v-on:click="number()">安排房號</button></td>
+                <td><button class="button is-danger is-focus" v-on:click="number()">刪除訂單</button></td>
               </tr>
             </table>
           </div>
         </div>
       </div>
-      <button class="button is-info is-active"  v-on:click="search_data()">列出全部</button>
+      <button class="button is-primary is-focused" v-on:click="search_data()">列出全部</button>
       <div> {{ Data }} </div>
 
       <!-- <div class="detail">
