@@ -113,7 +113,7 @@ export default {
     top: 50px;
     line-height: 50px;
     display: block;
-    /*text-align: center;*/
+    text-align: center;
     font-size: 30px;
     font-weight: 200;
     border-bottom: 1px none #33425B;

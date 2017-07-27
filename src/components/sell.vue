@@ -8,22 +8,34 @@
         <h4>*填寫訂房資訊</h4>
         <div class="detail-white">
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">訂房人姓名</label>  
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="order.name">
+            <label class="control-label" for="textinput">訂房人姓名</label>  
+            <div class="control has-icons-left">
+              <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="order.name">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">入住日期</label>
-            <div class="col-md-4">  
-              <datepicker placeholder="  Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
+            <label class="control-label" for="textinput">入住日期</label>
+            <div class="control has-icons-left">
+              <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
+              <span class="icon is-small is-left">
+                <i class="fa fa-calendar"></i>
+              </span>
             </div>  
           </div>
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">房間類型</label>
-            <div class="col-md-4">
-              <label class="checkbox-inline"><input type="checkbox" value="1" v-model="room_type">單人房</label>
-              <label class="checkbox-inline"><input type="checkbox" value="2" v-model="room_type">雙人房</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="answer" value="1" v-model="room_type">
+                單人房
+              </label>
+              <label class="radio">
+                <input type="radio" name="answer" value="2" v-model="room_type">
+                雙人房
+              </label>
             </div>
           </div>
         </div>
@@ -36,31 +48,46 @@
         <h4>*更改訂房資訊</h4>
         <div class="detail-white">
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">輸入order_id</label>
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="update.order_id">
+            <label class="control-label" for="textinput">輸入order_id</label>
+            <div class="control has-icons-left">
+              <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="update.order_id">
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">訂房人姓名</label>  
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="Name" class="form-control input-md" type="text"  v-model="update.name">
+            <label class="control-label" for="textinput">訂房人姓名</label>  
+            <div class="control has-icons-left">
+              <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="update.name">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
             </div>
           </div>
 
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">入住日期</label>
-            <div class="col-md-4">  
-              <datepicker placeholder="  Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
+            <label class="control-label" for="textinput">入住日期</label>
+            <div class="control has-icons-left">
+              <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
+              <span class="icon is-small is-left">
+                <i class="fa fa-calendar"></i>
+              </span>
             </div>  
           </div>
 
           <div class="form-group">
             <label class="col-md-4 control-label" for="textinput">房間類型</label>
-            <div class="col-md-4">
-              <label class="checkbox-inline"><input type="checkbox" value="1" v-model="update_room_type">單人房</label>
-              <label class="checkbox-inline"><input type="checkbox" value="2" v-model="update_room_type">雙人房</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="answer" value="1" v-model="update_room_type">
+                單人房
+              </label>
+              <label class="radio">
+                <input type="radio" name="answer" value="2" v-model="update_room_type">
+                雙人房
+              </label>
             </div>
           </div>
         </div>
@@ -73,15 +100,21 @@
         <h4>*刪除整筆訂單</h4>
         <div class="detail-white">
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">輸入order_id</label>  
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="Order_id" class="form-control input-md" type="text"  v-model="remove.order_id">
+            <label class="control-label" for="textinput">輸入order_id</label>
+            <div class="control has-icons-left">
+              <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="remove.order_id">
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">輸入key</label>  
-            <div class="col-md-4">
-              <input id="textinput" name="textinput" placeholder="Date_RoomType" class="form-control input-md" type="text"  v-model="remove.key">
+            <label class="control-label" for="textinput">輸入order_id</label>
+            <div class="control has-icons-left">
+              <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
+              <span class="icon is-small is-left">
+                <i class="fa fa-key"></i>
+              </span>
             </div>
           </div>
         </div>
