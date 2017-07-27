@@ -1,7 +1,8 @@
 <template>
   <div class="manage"> 
+
     <navbar></navbar> 
- 
+
     <div class="content">
       <div class="detail">
         <h4>*訂單資料列表</h4>
@@ -161,6 +162,7 @@ export default {
     padding: 40px;
     background-color: #edf0f5;
   }
+
 
   /*right side*/
 </style>
