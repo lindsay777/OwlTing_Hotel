@@ -4,98 +4,135 @@
       <navbar></navbar>
 
       <div class="content">
-        <!-- 以下是new order -->
-        <div class="detail">
-          <h4>*新增房間</h4>
-          <div class="detail-white">
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">輸入key</label>  
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Date_RoomType ex. 2017-08-01_1" class="input" type="text"  v-model="order.key">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-key"></i>
-                </span>
-              </div>
-            </div>
+        <div class="tabs is-boxed is-medium">
+          <ul>
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">總房間數</label>  
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="order.total">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-institution"></i>
-                </span>
-              </div>
-            </div>
+            <li v-bind:class="{ active: tab_selected=='新增房間'}">
+              <a @click="tab_selected='新增房間'">
+                <span class="icon is-small"><i class="fa fa-image"></i></span>
+                <span>新增房間</span>
+              </a>
+            </li>
+
+            <li v-bind:class="{ active: tab_selected=='修改房間'}">
+              <a @click="tab_selected='修改房間'">
+                <span class="icon is-small"><i class="fa fa-music"></i></span>
+                <span>修改房間</span>
+              </a>
+            </li>
+
+            <li v-bind:class="{ active: tab_selected=='刪除房間'}">
+              <a @click="tab_selected='刪除房間'">
+                <span class="icon is-small"><i class="fa fa-film"></i></span>
+                <span>刪除房間</span>
+              </a>
+            </li>
             
-          </div>
+          </ul>
         </div>
-        <button class="button is-primary is-focused"  v-on:click="send_order">送出資料</button>
-        <div> {{response}} </div>
-        <br>
+
+
+
+
+        <!-- 以下是new order -->
+        <div v-if="tab_selected=='新增房間'">
+          <div class="detail">
+            <h4>*新增房間</h4>
+            <div class="detail-white">
+
+              <div class="form-group">
+                <label class="control-label" for="textinput">輸入key</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Date_RoomType ex. 2017-08-01_1" class="input" type="text"  v-model="order.key">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="textinput">總房間數</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="order.total">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-institution"></i>
+                  </span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <button class="button is-primary is-focused"  v-on:click="send_order">送出資料</button>
+          <div> {{response}} </div>
+          <br>
+        </div>
 
         <!-- 以下是update order -->
-        <div class="detail">
-          <h4>*更改房間資訊</h4>
-          <div class="detail-white">
+        <div v-if="tab_selected=='修改房間'">
+          <div class="detail">
+            <h4>*更改房間資訊</h4>
+            <div class="detail-white">
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">輸入key</label>
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Key" class="input" type="text"  v-model="update.key">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-key"></i>
-                </span>
+              <div class="form-group">
+                <label class="control-label" for="textinput">輸入key</label>
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Key" class="input" type="text"  v-model="update.key">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">總房間數</label>  
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="update.total">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-institution"></i>
-                </span>
+              <div class="form-group">
+                <label class="control-label" for="textinput">總房間數</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="update.total">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-institution"></i>
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">已售出房間數</label>  
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Soldout" class="input" type="text"  v-model="update.soldout">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-check-square-o"></i>
-                </span>
+              <div class="form-group">
+                <label class="control-label" for="textinput">已售出房間數</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Soldout" class="input" type="text"  v-model="update.soldout">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-check-square-o"></i>
+                  </span>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
+          <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
+          <div> {{response}} </div>
+          <br>
         </div>
-        <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
-        <div> {{response}} </div>
-        <br>
 
         <!-- 以下是delete order -->
-        <div class="detail">
-          <h4>*刪除房間資料</h4>
-          <div class="detail-white">
+        <div v-if="tab_selected=='刪除房間'">
+          <div class="detail">
+            <h4>*刪除房間資料</h4>
+            <div class="detail-white">
 
-            <div class="form-group">
-              <label class="control-label" for="textinput">輸入key</label>  
-              <div class="control has-icons-left">
-                <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-key"></i>
-                </span>
+              <div class="form-group">
+                <label class="control-label" for="textinput">輸入key</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-key"></i>
+                  </span>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
+          <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
+          <div> {{response}} </div>
+          <br>
         </div>
-        <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
-        <div> {{response}} </div>
-        <br>
 
       </div>
     </div>
@@ -125,8 +162,7 @@ export default {
       remove: [],
       room_type: [],
       update_room_type: [],
-      single_price: 1000,
-      double_price: 2000,
+      tab_selected: '新增房間',
       disable: true,
       response: null
     }
@@ -189,6 +225,30 @@ export default {
 <style scoped>
   
   /*right side*/
+
+  /*tab*/
+
+  .active{
+    background-color: white;
+    border-color: #dbdbdb;
+    border-bottom-color: transparent !important;
+  }
+
+  .active a{
+    color: #00d1b2;
+  }
+
+  .tabs ul{
+    padding-left: 20px;
+  }
+
+  .tabs a{
+    margin-bottom: -2px;
+  }
+
+  /*tab*/
+
+
   .radio-inline,
   .checkbox-inline{
     margin-right: 10px;

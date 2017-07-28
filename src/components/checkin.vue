@@ -3,8 +3,7 @@
     <navbar></navbar> 
  
     <div class="content">
-      <div class="row">
-      </div>
+      
     </div>
   </div>
 </template>

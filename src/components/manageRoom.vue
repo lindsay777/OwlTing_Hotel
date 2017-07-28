@@ -50,8 +50,11 @@
 
 <script>
 
+import Navbar from './navbar'
+
 export default {
   components: {
+    Navbar
   },
   name: 'manageRoom',
   data () {

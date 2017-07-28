@@ -4,127 +4,158 @@
 
     <div class="content">
 
+      <div class="tabs is-boxed is-medium">
+        <ul>
 
+          <li v-bind:class="{ active: tab_selected=='新增訂單'}">
+            <a @click="tab_selected='新增訂單'">
+              <span class="icon is-small"><i class="fa fa-image"></i></span>
+              <span>新增訂單</span>
+            </a>
+          </li>
+
+          <li v-bind:class="{ active: tab_selected=='修改訂單'}">
+            <a @click="tab_selected='修改訂單'">
+              <span class="icon is-small"><i class="fa fa-music"></i></span>
+              <span>修改訂單</span>
+            </a>
+          </li>
+
+          <li v-bind:class="{ active: tab_selected=='刪除訂單'}">
+            <a @click="tab_selected='刪除訂單'">
+              <span class="icon is-small"><i class="fa fa-film"></i></span>
+              <span>刪除訂單</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
 
       <!-- 以下是new order -->
-      <div class="detail">
-        <h4>*填寫訂房資訊</h4>
-        <div class="detail-white">
-          <div class="form-group">
-            <label class="control-label" for="textinput">訂房人姓名</label>  
-            <div class="control has-icons-left">
-              <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="order.name">
-              <span class="icon is-small is-left">
-                <i class="fa fa-user"></i>
-              </span>
+      <div v-if="tab_selected=='新增訂單'">
+        <div class="detail">
+          <h4>*填寫訂房資訊</h4>
+          <div class="detail-white">
+            <div class="form-group">
+              <label class="control-label" for="textinput">訂房人姓名</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="order.name">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user"></i>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label" for="textinput">入住日期</label>
-            <div class="control has-icons-left">
-              <datepicker class="input datepicker" placeholder="Select Date" format="date_format" v-model="order.checkin_date"></datepicker>
-              <span class="icon is-small is-left">
-                <i class="fa fa-calendar"></i>
-              </span>
-            </div>  
-          </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">房間類型</label>
-            <div class="control">
-              <label class="radio">
-                <input type="radio" name="answer" value="1" v-model="room_type">
-                單人房
-              </label>
-              <label class="radio">
-                <input type="radio" name="answer" value="2" v-model="room_type">
-                雙人房
-              </label>
+            <div class="form-group">
+              <label class="control-label" for="textinput">入住日期</label>
+              <div class="control has-icons-left">
+                <datepicker class="input datepicker" placeholder="Select Date" format="date_format" v-model="order.checkin_date"></datepicker>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </div>  
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">房間類型</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="answer" value="1" v-model="room_type">
+                  單人房
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer" value="2" v-model="room_type">
+                  雙人房
+                </label>
+              </div>
             </div>
           </div>
         </div>
+        <button class="button is-primary is-focused"  v-on:click="send_order">送出訂單</button>
+        <div> {{response}} </div>
+        <br>
       </div>
-      <button class="button is-primary is-focused"  v-on:click="send_order">送出訂單</button>
-      <div> {{response}} </div>
-      <br>
       <!-- 以下是update order -->
-      <div class="detail">
-        <h4>*更改訂房資訊</h4>
-        <div class="detail-white">
-          <div class="form-group">
-            <label class="control-label" for="textinput">輸入order_id</label>
-            <div class="control has-icons-left">
-              <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="update.order_id">
-              <span class="icon is-small is-left">
-                <i class="fa fa-envelope"></i>
-              </span>
+      <div v-if="tab_selected=='修改訂單'">
+        <div class="detail">
+          <h4>*更改訂房資訊</h4>
+          <div class="detail-white">
+            <div class="form-group">
+              <label class="control-label" for="textinput">輸入order_id</label>
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="update.order_id">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label" for="textinput">訂房人姓名</label>  
-            <div class="control has-icons-left">
-              <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="update.name">
-              <span class="icon is-small is-left">
-                <i class="fa fa-user"></i>
-              </span>
+            <div class="form-group">
+              <label class="control-label" for="textinput">訂房人姓名</label>  
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Name" class="input" type="text"  v-model="update.name">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-user"></i>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <label class="control-label" for="textinput">入住日期</label>
-            <div class="control has-icons-left">
-              <datepicker class="input" placeholder="Select Date" format="date_format" v-model="update.checkin_date"></datepicker>
-              <span class="icon is-small is-left">
-                <i class="fa fa-calendar"></i>
-              </span>
-            </div>  
-          </div>
+            <div class="form-group">
+              <label class="control-label" for="textinput">入住日期</label>
+              <div class="control has-icons-left">
+                <datepicker class="input" placeholder="Select Date" format="date_format" v-model="update.checkin_date"></datepicker>
+                <span class="icon is-small is-left">
+                  <i class="fa fa-calendar"></i>
+                </span>
+              </div>  
+            </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="textinput">房間類型</label>
-            <div class="control">
-              <label class="radio">
-                <input type="radio" name="answer" value="1" v-model="update_room_type">
-                單人房
-              </label>
-              <label class="radio">
-                <input type="radio" name="answer" value="2" v-model="update_room_type">
-                雙人房
-              </label>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="textinput">房間類型</label>
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="answer" value="1" v-model="update_room_type">
+                  單人房
+                </label>
+                <label class="radio">
+                  <input type="radio" name="answer" value="2" v-model="update_room_type">
+                  雙人房
+                </label>
+              </div>
             </div>
           </div>
         </div>
+        <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
+        <div> {{response}} </div>
+        <br>
       </div>
-      <button class="button is-primary is-focused"  v-on:click="send_update">送出訂單</button>
-      <div> {{response}} </div>
-      <br>
       <!-- 以下是delete order -->
-      <div class="detail">
-        <h4>*刪除整筆訂單</h4>
-        <div class="detail-white">
-          <div class="form-group">
-            <label class="control-label" for="textinput">輸入order_id</label>
-            <div class="control has-icons-left">
-              <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="remove.order_id">
-              <span class="icon is-small is-left">
-                <i class="fa fa-envelope"></i>
-              </span>
+      <div v-if="tab_selected=='刪除訂單'">
+        <div class="detail">
+          <h4>*刪除整筆訂單</h4>
+          <div class="detail-white">
+            <div class="form-group">
+              <label class="control-label" for="textinput">輸入order_id</label>
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Order_id" class="input" type="text"  v-model="remove.order_id">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-envelope"></i>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label" for="textinput">輸入key</label>
-            <div class="control has-icons-left">
-              <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
-              <span class="icon is-small is-left">
-                <i class="fa fa-key"></i>
-              </span>
+            <div class="form-group">
+              <label class="control-label" for="textinput">輸入key</label>
+              <div class="control has-icons-left">
+                <input id="textinput" name="textinput" placeholder="Date_RoomType" class="input" type="text"  v-model="remove.key">
+                <span class="icon is-small is-left">
+                  <i class="fa fa-key"></i>
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
+        <div> {{response}} </div>
+        <br>
       </div>
-      <button class="button is-primary is-focused"  v-on:click="send_delete">送出訂單</button>
-      <div> {{response}} </div>
-      <br>
 
     </div>
   </div>
@@ -156,8 +187,7 @@ export default {
       remove: [],
       room_type: [],
       update_room_type: [],
-      single_price: 1000,
-      double_price: 2000,
+      tab_selected: '新增訂單',
       disable: true,
       response: null
     }
@@ -214,6 +244,29 @@ export default {
 <style scoped>
   
   /*right side*/
+
+  /*tab*/
+
+  .active{
+    background-color: white;
+    border-color: #dbdbdb;
+    border-bottom-color: transparent !important;
+  }
+
+  .active a{
+    color: #00d1b2;
+  }
+
+  .tabs ul{
+    padding-left: 20px;
+  }
+
+  .tabs a{
+    margin-bottom: -2px;
+  }
+
+  /*tab*/
+
 
   .radio-inline,
   .checkbox-inline{
