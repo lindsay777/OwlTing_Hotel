@@ -4,6 +4,41 @@
       <navbar></navbar>
 
       <div class="content">
+        <!-- 最上排level -->
+        <div class="columns">
+          <div class="column">
+            <!-- <div class="card text-center room"> -->
+              <nav class="level">
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Tweets</p>
+                    <p class="title">3,456</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Following</p>
+                    <p class="title">123</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Followers</p>
+                    <p class="title">456K</p>
+                  </div>
+                </div>
+                <div class="level-item has-text-centered">
+                  <div>
+                    <p class="heading">Likes</p>
+                    <p class="title">789</p>
+                  </div>
+                </div>
+              </nav> 
+            <!-- </div> -->
+          </div>
+        </div>
+
+
         <!-- 最上排三個 -->
         <div class="columns">
 
@@ -35,7 +70,7 @@
           </div>
         </div>
 
-        <!-- 原本的四格 -->
+        <!-- 房間們 -->
         <div class="columns">
 
           <div class="column">
@@ -43,17 +78,17 @@
               <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">查看房型</a>
+                <a href="#" class="button is-primary is-focused">0701</a>
               </div>
             </div>
           </div>
 
           <div class="column">
             <div class="card text-center room">
-              <div class="card-header">雙人房</div>
+              <div class="card-header">單人房</div>
               <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">查看房型</a>
+                <h4 class="card-title">豪華</h4>
+                <a href="#" class="button is-primary is-focused">0702</a>
               </div>
             </div>
           </div>
@@ -63,7 +98,31 @@
               <div class="card-header">單人房</div>
               <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">查看房型</a>
+                <a href="#" class="button is-primary is-focused">0801</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card text-center room">
+              <div class="card-header">單人房</div>
+              <div class="card-block">
+                <h4 class="card-title">豪華</h4>
+                <a href="#" class="button is-primary is-focused">0802</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="columns">
+
+          <div class="column">
+            <div class="card text-center room">
+              <div class="card-header">雙人房</div>
+              <div class="card-block">
+                <h4 class="card-title">經典</h4>
+                <a href="#" class="button is-primary is-focused">0705</a>
               </div>
             </div>
           </div>
@@ -72,8 +131,28 @@
             <div class="card text-center room">
               <div class="card-header">雙人房</div>
               <div class="card-block">
+                <h4 class="card-title">豪華</h4>
+                <a href="#" class="button is-primary is-focused">0706</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card text-center room">
+              <div class="card-header">雙人房</div>
+              <div class="card-block">
                 <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">查看房型</a>
+                <a href="#" class="button is-primary is-focused">0805</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card text-center room">
+              <div class="card-header">雙人房</div>
+              <div class="card-block">
+                <h4 class="card-title">豪華</h4>
+                <a href="#" class="button is-primary is-focused">0806</a>
               </div>
             </div>
           </div>
@@ -128,6 +207,16 @@ export default {
     position: fixed;
     padding: 40px;
     background-color: #edf0f5;
+  }
+
+  .card-header{
+    display: flex;
+    justify-content: center;
+  }
+
+  .level{
+    margin-top: 5px;
+    margin-bottom: 40px;
   }
 
   /*right side*/
