@@ -71,64 +71,17 @@
 
         <!-- 房間們 -->
         <div class="columns">
-
-          <div class="column">
-            <room title="單人房" body="經典" number="0701"></room>
-          </div>
-          <div class="column">
-            <room title="單人房" body="豪華" number="0702"></room>
-          </div>
-          <div class="column">
-            <room title="單人房" body="經典" number="0801"></room>
-          </div>
-          <div class="column">
-            <room title="單人房" body="豪華" number="0802"></room>
-          </div>
-
+          <room title="單人房" body="經典" number="0701"></room>
+          <room title="單人房" body="豪華" number="0702"></room>
+          <room title="單人房" body="經典" number="0801"></room>
+          <room title="單人房" body="豪華" number="0802"></room>
         </div>
 
         <div class="columns">
-
-          <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">0705</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">豪華</h4>
-                <a href="#" class="button is-primary is-focused">0706</a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">0805</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">雙人房</div>
-              <div class="card-block">
-                <h4 class="card-title">豪華</h4>
-                <a href="#" class="button is-primary is-focused">0806</a>
-              </div>
-            </div>
-          </div>
-
+          <room title="雙人房" body="經典" number="0705"></room>
+          <room title="雙人房" body="豪華" number="0706"></room>
+          <room title="雙人房" body="經典" number="0805"></room>
+          <room title="雙人房" body="豪華" number="0806"></room>
         </div>
 
       </div>

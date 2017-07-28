@@ -1,12 +1,14 @@
 <template>
 
-      <div class="card text-center room">
-        <div class="card-header">{{ title }}</div>
-        <div class="card-block">
-          <h4 class="card-title">{{ body }}</h4>
-          <a href="#" class="button is-primary is-focused">{{ number }}</a>
-        </div>
+  <div class="column">
+    <div class="card text-center room">
+      <div class="card-header">{{ title }}</div>
+      <div class="card-block">
+        <h4 class="card-title">{{ body }}</h4>
+        <a href="#" class="button is-primary is-focused">{{ number }}</a>
       </div>
+    </div>
+  </div>
 
 </template>
        
