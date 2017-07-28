@@ -11,25 +11,25 @@
               <nav class="level">
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">Tweets</p>
-                    <p class="title">3,456</p>
+                    <p class="heading">客房住用數</p>
+                    <p class="title">5,209</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">Following</p>
-                    <p class="title">123</p>
+                    <p class="heading">住用率</p>
+                    <p class="title">70.10%</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">Followers</p>
+                    <p class="heading">總營業收入</p>
                     <p class="title">456K</p>
                   </div>
                 </div>
                 <div class="level-item has-text-centered">
                   <div>
-                    <p class="heading">Likes</p>
+                    <p class="heading">員工合計</p>
                     <p class="title">789</p>
                   </div>
                 </div>
@@ -37,7 +37,6 @@
             <!-- </div> -->
           </div>
         </div>
-
 
         <!-- 最上排三個 -->
         <div class="columns">
@@ -74,43 +73,16 @@
         <div class="columns">
 
           <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">0701</a>
-              </div>
-            </div>
+            <room title="單人房" body="經典" number="0701"></room>
           </div>
-
           <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">豪華</h4>
-                <a href="#" class="button is-primary is-focused">0702</a>
-              </div>
-            </div>
+            <room title="單人房" body="豪華" number="0702"></room>
           </div>
-          
           <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">經典</h4>
-                <a href="#" class="button is-primary is-focused">0801</a>
-              </div>
-            </div>
+            <room title="單人房" body="經典" number="0801"></room>
           </div>
-
           <div class="column">
-            <div class="card text-center room">
-              <div class="card-header">單人房</div>
-              <div class="card-block">
-                <h4 class="card-title">豪華</h4>
-                <a href="#" class="button is-primary is-focused">0802</a>
-              </div>
-            </div>
+            <room title="單人房" body="豪華" number="0802"></room>
           </div>
 
         </div>
@@ -158,7 +130,6 @@
           </div>
 
         </div>
-        <!-- </div> -->
 
       </div>
 
@@ -169,11 +140,13 @@
 <script>
 
 import Navbar from './navbar'
+import room from './home_room'
 
 export default {
   name: 'home',
   components: {
-    Navbar
+    Navbar,
+    room
   },
   data () {
     return {

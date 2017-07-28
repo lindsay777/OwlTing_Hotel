@@ -50,16 +50,8 @@
 
 <script>
 
-import Navbar from './navbar'
-
-// import toastr from 'toastr'
-import Datepicker from 'vuejs-datepicker'
-// var $ = window.jQuery = require('../../node_modules/jquery')
-
 export default {
   components: {
-    Datepicker,
-    Navbar
   },
   name: 'room',
   data () {
