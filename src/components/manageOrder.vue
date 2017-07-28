@@ -99,7 +99,7 @@ export default {
     Datepicker,
     Navbar
   },
-  name: 'manage',
+  name: 'manageOrder',
   data () {
     return {
       date_format: 'yyyyMMdd',

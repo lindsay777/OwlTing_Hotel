@@ -1,5 +1,5 @@
 <template>
-    <div class="Room">
+    <div class="manageRoom">
       
       <navbar></navbar>
 
@@ -53,7 +53,7 @@
 export default {
   components: {
   },
-  name: 'room',
+  name: 'manageRoom',
   data () {
     return {
       date_format: 'yyyyMMdd',

@@ -1,7 +1,7 @@
 <template>
 
   <div class="column">
-    <div class="card text-center room">
+    <div class="card text-center eachroom">
       <div class="card-header">{{ title }}</div>
       <div class="card-block">
         <h4 class="card-title">{{ body }}</h4>
@@ -15,7 +15,7 @@
 <script>
 
 export default {
-  name: 'room',
+  name: 'eachroom',
   props: ['title', 'body', 'number'],
   components: {
   },
@@ -34,7 +34,7 @@ export default {
 <style scoped>
   
   /*right side*/
-  .room{
+  .eachroom{
     margin-bottom: 20px;
   }
 

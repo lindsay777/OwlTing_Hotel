@@ -24,7 +24,7 @@
         <ul class="menu-list">
 
           <li>
-            <a href="#/sell">
+            <a href="#/editOrder">
               <span class="icon">
                 <i class="fa fa-gift" aria-hidden="true"></i>
                 </span>
@@ -33,7 +33,7 @@
           </li>  
           
           <li>
-            <a href="#/manage">
+            <a href="#/manageOrder">
               <span class="icon">
                 <i class="fa fa-address-card" aria-hidden="true"></i>
               </span>
@@ -47,7 +47,7 @@
         <ul class="menu-list">
 
           <li>
-            <a href="#/room">
+            <a href="#/manageRoom">
               <span class="icon">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
               </span>
@@ -56,7 +56,7 @@
           </li>
 
           <li>
-            <a href="#/empty">
+            <a href="#/editRoom">
               <span class="icon">
                 <i class="fa fa-address-book-o" aria-hidden="true"></i>
               </span>

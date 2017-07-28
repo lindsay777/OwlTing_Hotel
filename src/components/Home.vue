@@ -71,11 +71,13 @@
 
         <!-- 房間們 -->
         <div class="columns">
-          <room v-for="room in room_data" v-if="room.title=='單人房'" :title="room.title" :body="room.body" :number="room.number"></room>
+          <eachroom v-for="eachroom in room_data" :key="eachroom.number"
+                    v-if="eachroom.title=='單人房'" :title="eachroom.title" :body="eachroom.body" :number="eachroom.number"></eachroom>
         </div>
 
         <div class="columns">
-          <room v-for="room in room_data" v-if="room.title=='雙人房'" :title="room.title" :body="room.body" :number="room.number"></room>
+          <eachroom v-for="eachroom in room_data" :key="eachroom.number"
+                    v-if="eachroom.title=='雙人房'" :title="eachroom.title" :body="eachroom.body" :number="eachroom.number"></eachroom>
         </div>
 
       </div>
@@ -87,13 +89,13 @@
 <script>
 
 import Navbar from './navbar'
-import room from './home_room'
+import eachroom from './home_room'
 
 export default {
   name: 'home',
   components: {
     Navbar,
-    room
+    eachroom
   },
   data () {
     return {

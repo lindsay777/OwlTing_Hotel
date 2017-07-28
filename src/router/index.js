@@ -4,10 +4,10 @@ import Hello from '@/components/Hello'
 import Home from '@/components/Home'
 import Checkout from '@/components/checkout'
 import Checkin from '@/components/checkin'
-import Sell from '@/components/Sell'
-import Empty from '@/components/Empty'
-import Manage from '@/components/Manage'
-import Room from '@/components/Room'
+import editOrder from '@/components/editOrder'
+import editRoom from '@/components/editRoom'
+import manageOrder from '@/components/manageOrder'
+import manageRoom from '@/components/manageRoom'
 
 Vue.use(Router)
 
@@ -34,24 +34,24 @@ export default new Router({
       component: Checkin
     },
     {
-      path: '/sell',
-      name: 'Sell',
-      component: Sell
+      path: '/editOrder',
+      name: 'editOrder',
+      component: editOrder
     },
     {
-      path: '/empty',
-      name: 'Empty',
-      component: Empty
+      path: '/editRoom',
+      name: 'editRoom',
+      component: editRoom
     },
     {
-      path: '/manage',
-      name: 'Manage',
-      component: Manage
+      path: '/manageOrder',
+      name: 'manageOrder',
+      component: manageOrder
     },
     {
-      path: '/room',
-      name: 'Room',
-      component: Room
+      path: '/manageRoom',
+      name: 'manageRoom',
+      component: manageRoom
     }
   ]
 })

@@ -1,47 +1,9 @@
 <template>
-    <div class="empty">
+    <div class="editRoom">
 
       <navbar></navbar>
 
       <div class="content">
-        <!-- <div class="detail">
-          <h4>*查詢空房</h4>
-          <div class="detail-white">
-            <div class="form-group">
-              <label class="col-md-4 control-label" for="textinput">查詢目前已有預定的日期</label>
-            </div>
-
-            <button class="btn btn-primary"  v-on:click="search_date">點擊查詢</button>
-            <div v-for="item of Data">{{ item }}</div>
-   
-          </div>
-        </div> -->
-
-        <!-- <div class="detail">
-          <h4>*目前房況列表</h4>
-          <div class="detail-white">
-            <div class="form-group">
-              <br>
-              <table class="table table-condensed">
-                <tr>
-                  <th>key(日期_房型)</th>
-                  <th>total</th>
-                  <th>soldout</th> -->
-                  <!-- <th>status</th> -->
-                <!-- </tr>
-                <tr v-for="data in Data">
-                  <td>{{ data.fields.key }}</td>
-                  <td>{{ data.fields.total }}</td>
-                  <td>{{ data.fields.soldout }}</td>
-                </tr>
-              </table>
-            </div>
-          </div>
-        </div>
-        <button class="btn-sm btn-primary"  v-on:click="search_data()">列出全部</button>
-        <div> {{ Data }} </div>
-        <br> -->
-
         <!-- 以下是new order -->
         <div class="detail">
           <h4>*新增房間</h4>
@@ -151,7 +113,7 @@ export default {
     Datepicker,
     Navbar
   },
-  name: 'empty',
+  name: 'editRoom',
   data () {
     return {
       date_format: 'yyyy-MM-dd',

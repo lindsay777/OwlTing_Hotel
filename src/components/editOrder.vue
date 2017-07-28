@@ -1,8 +1,11 @@
 <template>
-  <div class="sell">
+  <div class="editOrder">
     <navbar></navbar>
 
     <div class="content">
+
+
+
       <!-- 以下是new order -->
       <div class="detail">
         <h4>*填寫訂房資訊</h4>
@@ -141,7 +144,7 @@ export default {
     Datepicker,
     Navbar
   },
-  name: 'sell',
+  name: 'editOrder',
   data () {
     return {
       date_format: 'yyyy-MM-dd',
