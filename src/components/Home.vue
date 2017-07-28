@@ -71,17 +71,11 @@
 
         <!-- 房間們 -->
         <div class="columns">
-          <room title="單人房" body="經典" number="0701"></room>
-          <room title="單人房" body="豪華" number="0702"></room>
-          <room title="單人房" body="經典" number="0801"></room>
-          <room title="單人房" body="豪華" number="0802"></room>
+          <room v-for="room in room_data" v-if="room.title=='單人房'" :title="room.title" :body="room.body" :number="room.number"></room>
         </div>
 
         <div class="columns">
-          <room title="雙人房" body="經典" number="0705"></room>
-          <room title="雙人房" body="豪華" number="0706"></room>
-          <room title="雙人房" body="經典" number="0805"></room>
-          <room title="雙人房" body="豪華" number="0806"></room>
+          <room v-for="room in room_data" v-if="room.title=='雙人房'" :title="room.title" :body="room.body" :number="room.number"></room>
         </div>
 
       </div>
@@ -103,7 +97,17 @@ export default {
   },
   data () {
     return {
-      // msg: 'Welcome to Home Page'
+      room_data: [
+      {title: '單人房', body: '經典', number: '0701'},
+      {title: '單人房', body: '豪華', number: '0702'},
+      {title: '單人房', body: '經典', number: '0801'},
+      {title: '單人房', body: '豪華', number: '0802'},
+      {title: '雙人房', body: '經典', number: '0705'},
+      {title: '雙人房', body: '豪華', number: '0706'},
+      {title: '雙人房', body: '經典', number: '0805'},
+      {title: '雙人房', body: '豪華', number: '0806'}
+
+      ]
     }
   },
   methods: {
