@@ -11,16 +11,18 @@
             <br>
             <table class="table table-condensed">
               <tr>
-                <th>order_id</th>
-                <th>user_id</th>
-                <th>date</th>
-                <th>room_type</th>
+                <th width=35%>訂單編號</th>
+                <th width=15%>訂房人姓名</th>
+                <th width=20%>入住日期</th>
+                <th width=10%>房型</th>
+                <th width=10%>動作</th>
+                <th width=10%> </th>
               </tr>
               <tr v-for="data in Data">
-                <td>{{ data.fields.order_id }}</td>
-                <td>{{ data.fields.user_id }}</td>
-                <td>{{ data.fields.date }}</td>
-                <td>{{ data.fields.room_type }}</td>
+                <td>{{ data.order_id }}</td>
+                <td>{{ data.user_id }}</td>
+                <td>{{ data.date }}</td>
+                <td>{{ data.room_type }}</td>
                 <td><button class="button is-warning is-focus" v-on:click="number()">安排房號</button></td>
                 <td><button class="button is-danger is-focus" v-on:click="number()">刪除訂單</button></td>
               </tr>
@@ -31,55 +33,6 @@
       <button class="button is-primary is-focused" v-on:click="search_data()">列出全部</button>
       <div> {{ Data }} </div>
 
-      <!-- <div class="detail">
-        <h4>*修改訂單</h4>
-        <div class="detail-white">
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">order_id*</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.order_id">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">name</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.name">                  
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">room_id</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.room_id">                  
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">people</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.number_of_people">                  
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">price</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.price">                  
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">date</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.date">                  
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-md-2 control-label" for="textinput">time</label>  
-            <div class="col-md-8">
-              <input id="textinput" name="textinput" class="form-control input-md" type="text"  v-model="order.time">                  
-            </div>
-          </div>
-
-          <button class="btn btn-primary"  v-on:click="search_data">確認送出</button>   
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -103,7 +56,7 @@ export default {
   data () {
     return {
       date_format: 'yyyyMMdd',
-      get_url: 'http://localhost:8000/ethereum/booking_contract/orders/order_detail/',
+      get_url: 'http://localhost:8070/get/order/all_order',
       search: [],
       Data: [],
       single_price: 1000,
@@ -159,6 +112,7 @@ export default {
     width: 85%;
     height: 100%;
     position: fixed;
+    overflow-y: scroll;
     padding: 40px;
     background-color: #edf0f5;
   }

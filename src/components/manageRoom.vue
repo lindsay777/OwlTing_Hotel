@@ -31,9 +31,10 @@
                   <th>soldout</th>
                 </tr>
                 <tr v-for="data in Data">
-                  <td>{{ data.fields.key }}</td>
-                  <td>{{ data.fields.total }}</td>
-                  <td>{{ data.fields.soldout }}</td>
+                  <!-- django的格式{{ data.fields.key }} -->
+                  <td>{{ data.key }}</td>
+                  <td>{{ data.total }}</td>
+                  <td>{{ data.soldout }}</td>
                 </tr>
               </table>
             </div>
@@ -60,7 +61,7 @@ export default {
   data () {
     return {
       date_format: 'yyyyMMdd',
-      get_url: 'http://localhost:8000/ethereum/booking_contract/orders/room_detail/',
+      get_url: 'http://localhost:8070/get/room/all_room',
       search: [],
       Data: [],
       disable: true

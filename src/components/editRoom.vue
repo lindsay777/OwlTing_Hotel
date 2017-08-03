@@ -4,7 +4,7 @@
       <navbar></navbar>
 
       <div class="content">
-
+        <!-- tab分頁 -->
         <div class="tabs is-boxed is-medium">
           <ul>
 
@@ -31,9 +31,6 @@
             
           </ul>
         </div>
-
-
-
 
         <!-- 以下是new order -->
         <div v-if="tab_selected=='新增房間'">
@@ -154,9 +151,9 @@ export default {
   data () {
     return {
       date_format: 'yyyy-MM-dd',
-      send_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_room/',
-      update_url: 'http://localhost:8000/ethereum/booking_contract/orders/edit_room/',
-      delete_url: 'http://localhost:8000/ethereum/booking_contract/orders/delete_room/',
+      send_url: 'http://localhost:8070/post/room',
+      update_url: 'http://localhost:8070/update/room',
+      delete_url: 'http://localhost:8070/delete/room',
       order: [],
       update: [],
       remove: [],
@@ -168,24 +165,14 @@ export default {
     }
   },
   methods: {
-    // search_data: function () {
-    //   this.$http.get(this.get_url)
-    //       .then((response) => {
-    //         this.Data = response.data
-    //       })
-    //       .catch(function (response) {
-    //         console.log(response)
-    //       })
-    // }
     send_order: function () {
       var postdata = {
         'key': this.order.key,
         'total': this.order.total
       }
-      console.log(postdata.checkin_date)
       this.$http.post(this.send_url, postdata)
           .then((response) => {
-            console.log(response.data + '!')
+            console.log(response.data)
             this.response = response
           })
       this.show = false
@@ -196,10 +183,9 @@ export default {
         'total': this.update.total,
         'soldout': this.update.soldout
       }
-      console.log(postdata.checkin_date)
       this.$http.post(this.update_url, postdata)
           .then((response) => {
-            console.log(response.data + '!')
+            console.log(response.data)
             this.response = response
           })
       this.show = false
@@ -208,10 +194,9 @@ export default {
       var postdata = {
         'key': this.remove.key
       }
-      console.log(postdata.checkin_date)
       this.$http.post(this.delete_url, postdata)
           .then((response) => {
-            console.log(response.data + '!')
+            console.log(response.data)
             this.response = response
           })
       this.show = false

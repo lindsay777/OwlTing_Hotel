@@ -1,11 +1,11 @@
 <template>
-
+  
   <div class="column">
     <div class="card text-center eachroom">
       <div class="card-header">{{ title }}</div>
       <div class="card-block">
         <h4 class="card-title">{{ body }}</h4>
-        <a href="#" class="button is-primary is-focused">{{ number }}</a>
+        <button class="button is-primary is-focused" @click="activeEvent(title,body,number)">{{ number }}</button>
       </div>
     </div>
   </div>
@@ -25,6 +25,9 @@ export default {
     }
   },
   methods: {
+    activeEvent: function (title, body, number) {
+      this.$emit('activeEvent')
+    }
   }
 }
 

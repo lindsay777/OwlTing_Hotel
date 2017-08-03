@@ -77,7 +77,33 @@
 
         <div class="columns">
           <eachroom v-for="eachroom in room_data" :key="eachroom.number"
-                    v-if="eachroom.title=='雙人房'" :title="eachroom.title" :body="eachroom.body" :number="eachroom.number"></eachroom>
+                    v-if="eachroom.title=='雙人房'" :title="eachroom.title" :body="eachroom.body" :number="eachroom.number" @activeEvent="active_modal(eachroom.title,eachroom.body,eachroom.number)"></eachroom>
+        </div>
+
+        <!-- 房間資訊modal -->
+        <div class="modal is-active" v-show="modal_actived">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">{{ modal_data.number }} {{ modal_data.title }}</p>
+              <button class="delete" @click="close_modal()"></button>
+            </header>
+            <section class="modal-card-body">
+              <h4>小型雙人間 禁菸</h4>
+              <p>兩張單人床，大約8坪</p>
+              <br>
+              <h4>設施</h4>
+              <p> • 免費 WiFi • 空調 • 浴缸 獨立浴室 • 平面電視 • 熨褲機 • 書桌 • 暖氣 • 地毯 • 淋浴 • 浴缸 • 吹風機 • 免費盥洗用品 • 洗手間 • 浴室 • 拖鞋 • 按次計費頻道 • 電視 • 電話 • 冰箱 • 電熱水壺 • 喚醒服務 • 鬧鐘</p>
+              <br>
+              <h4>訂房須知</h4>
+              <li>早餐需額外加購(TWD 450)</li>
+              <li>房價包含: 8%增值稅, 10%住宿方服務費</li>
+            </section>
+            <footer class="modal-card-foot">
+              <a class="button is-primary">安排此房</a>
+              <a class="button" @click="close_modal()">取消</a>
+            </footer>
+          </div>
         </div>
 
       </div>
@@ -109,10 +135,24 @@ export default {
       {title: '雙人房', body: '經典', number: '0805'},
       {title: '雙人房', body: '豪華', number: '0806'}
 
-      ]
+      ],
+      modal_data: [],
+      modal_actived: false
     }
   },
   methods: {
+    active_modal: function (title, body, number) {
+      this.modal_data = {
+        'title': title,
+        'body': body,
+        'number': number
+      }
+
+      this.modal_actived = true
+    },
+    close_modal: function () {
+      this.modal_actived = false
+    }
   }
 }
 
@@ -152,5 +192,13 @@ export default {
   }
 
   /*right side*/
+
+  .modal-card-title{
+    text-align: center;
+  }
+
+  .content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child){
+    margin-bottom: 0em;
+  }
 
 </style>

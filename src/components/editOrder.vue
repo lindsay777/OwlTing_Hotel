@@ -4,6 +4,7 @@
 
     <div class="content">
 
+      <!-- tab分頁 -->
       <div class="tabs is-boxed is-medium">
         <ul>
 
@@ -48,7 +49,7 @@
             <div class="form-group">
               <label class="control-label" for="textinput">入住日期</label>
               <div class="control has-icons-left">
-                <datepicker class="input datepicker" placeholder="Select Date" format="date_format" v-model="order.checkin_date"></datepicker>
+                <datepicker class="input datepicker" placeholder="Select Date" :format="date_format" v-model="order.checkin_date"></datepicker>
                 <span class="icon is-small is-left">
                   <i class="fa fa-calendar"></i>
                 </span>
@@ -101,7 +102,7 @@
             <div class="form-group">
               <label class="control-label" for="textinput">入住日期</label>
               <div class="control has-icons-left">
-                <datepicker class="input" placeholder="Select Date" format="date_format" v-model="update.checkin_date"></datepicker>
+                <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="update.checkin_date"></datepicker>
                 <span class="icon is-small is-left">
                   <i class="fa fa-calendar"></i>
                 </span>
@@ -179,9 +180,9 @@ export default {
   data () {
     return {
       date_format: 'yyyy-MM-dd',
-      order_url: 'http://localhost:8000/ethereum/booking_contract/orders/new_order/',
-      update_url: 'http://localhost:8000/ethereum/booking_contract/orders/update_order/',
-      delete_url: 'http://localhost:8000/ethereum/booking_contract/orders/delete_order/',
+      order_url: 'http://localhost:8070/post/order',
+      update_url: 'http://localhost:8070/update/order',
+      delete_url: 'http://localhost:8070/delete/order',
       order: [],
       update: [],
       remove: [],
