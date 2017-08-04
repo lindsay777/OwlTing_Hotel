@@ -3,7 +3,7 @@
       
       <navbar></navbar>
 
-      <div class="content">
+      <div class="main_content">
         <!-- 最上排level -->
         <div class="columns">
           <div class="column">
@@ -106,9 +106,27 @@
           </div>
         </div>
 
+        <footer class="footer">
+          <div class="container">
+            <div class="content has-text-centered">
+              <p>
+                <br><br><br><br>
+                <strong>歐簿客科技股份有限公司</strong><br>
+                 The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC ANS 4.0</a>.
+              </p>
+              <p>
+                <a class="icon" href="https://github.com/lindsay777/OwlTing_Hotel">
+                  <i class="fa fa-github"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </footer>
+
       </div>
 
     </div>
+
 </template>
 
 
@@ -163,6 +181,16 @@ export default {
   
   /*right side*/
 
+  .footer{
+    bottom: 0px;
+    left: 15%;
+    width: 85%;
+/*    position: fixed;*/
+    padding-bottom: 0px;
+    background-color: #edf0f5;
+    padding: 0em
+  }
+
   .room-top{
     margin-bottom: 20px;
   }
@@ -171,12 +199,13 @@ export default {
     margin-bottom: 20px;
   }
 
-  .content{
+  .main_content{
     top: 0px;
     left: 15%;
     width: 85%;
     height: 100%;
     position: fixed;
+    overflow-y: scroll;
     padding: 40px;
     background-color: #edf0f5;
   }
@@ -197,7 +226,7 @@ export default {
     text-align: center;
   }
 
-  .content p:not(:last-child), .content dl:not(:last-child), .content ol:not(:last-child), .content ul:not(:last-child), .content blockquote:not(:last-child), .content pre:not(:last-child), .content table:not(:last-child){
+  .main_content p:not(:last-child), .main_content dl:not(:last-child), .main_content ol:not(:last-child), .main_content ul:not(:last-child), .main_content blockquote:not(:last-child), .main_content pre:not(:last-child), .main_content table:not(:last-child){
     margin-bottom: 0em;
   }
 
