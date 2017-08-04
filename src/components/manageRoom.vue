@@ -128,6 +128,7 @@ export default {
     width: 85%;
     height: 100%;
     position: fixed;
+    overflow-y: scroll;
     padding: 40px;
     background-color: #edf0f5;
   }

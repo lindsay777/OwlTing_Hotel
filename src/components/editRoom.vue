@@ -17,7 +17,7 @@
 
             <li v-bind:class="{ active: tab_selected=='多筆新增'}">
               <a @click="tab_selected='多筆新增'">
-                <span class="icon is-small"><i class="fa fa-image"></i></span>
+                <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
                 <span>多筆新增</span>
               </a>
             </li>
@@ -109,10 +109,6 @@
                     <input type="radio" name="answer" value="2" v-model="order.room_type">
                     雙人房
                   </label>
-                  <!-- 小豬的複選版本
-                  <label class="checkbox-inline"><input type="radio" value="1" v-model="room_id">單人房</label>
-                  <label class="checkbox-inline"><input type="radio" value="2" v-model="room_id">雙人房</label> -->
-
                 </div>
               </div>
 
