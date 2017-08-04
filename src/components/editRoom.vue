@@ -15,6 +15,13 @@
               </a>
             </li>
 
+            <li v-bind:class="{ active: tab_selected=='多筆新增'}">
+              <a @click="tab_selected='多筆新增'">
+                <span class="icon is-small"><i class="fa fa-image"></i></span>
+                <span>多筆新增</span>
+              </a>
+            </li>
+
             <li v-bind:class="{ active: tab_selected=='修改房間'}">
               <a @click="tab_selected='修改房間'">
                 <span class="icon is-small"><i class="fa fa-music"></i></span>
@@ -61,6 +68,67 @@
             </div>
           </div>
           <button class="button is-primary is-focused"  v-on:click="send_order">送出資料</button>
+          <div> {{response}} </div>
+          <br>
+        </div>
+
+        <!-- 以下是multi order -->
+        <div v-if="tab_selected=='多筆新增'">
+          <div class="detail">
+            <h4>*多筆新增</h4>
+            <div class="detail-white">
+
+              <div class="form-group">
+                <label class="control-label" for="textinput">起始日期</label>
+                <div class="control has-icons-left">
+                  <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="order.startdate"></datepicker>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </div>  
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="textinput">結束日期</label>
+                <div class="control has-icons-left">
+                  <datepicker class="input" placeholder="Select Date" :format="date_format" v-model="order.enddate"></datepicker>
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-calendar"></i>
+                  </span>
+                </div>  
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="textinput">房間類型</label>
+                <div class="control">
+                  <label class="radio">
+                    <input type="radio" name="answer" value="1" v-model="order.room_type">
+                    單人房
+                  </label>
+                  <label class="radio">
+                    <input type="radio" name="answer" value="2" v-model="order.room_type">
+                    雙人房
+                  </label>
+                  <!-- 小豬的複選版本
+                  <label class="checkbox-inline"><input type="radio" value="1" v-model="room_id">單人房</label>
+                  <label class="checkbox-inline"><input type="radio" value="2" v-model="room_id">雙人房</label> -->
+
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="textinput">總房間數</label>  
+                <div class="control has-icons-left">
+                  <input id="textinput" name="textinput" placeholder="Total" class="input" type="text"  v-model="order.total">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-institution"></i>
+                  </span>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <button class="button is-primary is-focused"  v-on:click="send_multiorders">送出資料</button>
           <div> {{response}} </div>
           <br>
         </div>
@@ -152,6 +220,7 @@ export default {
     return {
       date_format: 'yyyy-MM-dd',
       send_url: 'http://localhost:8070/post/room',
+      post_multiroom_url: 'http://localhost:8070/post/multiroom',
       update_url: 'http://localhost:8070/update/room',
       delete_url: 'http://localhost:8070/delete/room',
       order: [],
@@ -171,6 +240,21 @@ export default {
         'total': this.order.total
       }
       this.$http.post(this.send_url, postdata)
+          .then((response) => {
+            console.log(response.data)
+            this.response = response
+          })
+      this.show = false
+    },
+    send_multiorders: function () {
+      var postdata = {
+        'startdate': this.order.startdate.toISOString().substring(0, 10),
+        'enddate': this.order.enddate.toISOString().substring(0, 10),
+        'room_type': this.order.room_type,
+        'total': this.order.total
+      }
+      console.log(postdata)
+      this.$http.post(this.post_multiroom_url, postdata)
           .then((response) => {
             console.log(response.data)
             this.response = response

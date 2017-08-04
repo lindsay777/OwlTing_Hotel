@@ -100,8 +100,8 @@
               <li>房價包含: 8%增值稅, 10%住宿方服務費</li>
             </section>
             <footer class="modal-card-foot">
-              <a class="button is-primary">安排此房</a>
-              <a class="button" @click="close_modal()">取消</a>
+              <a class="button is-primary is-outlined">安排此房</a>
+              <a class="button is-outlined" @click="close_modal()">取消</a>
             </footer>
           </div>
         </div>

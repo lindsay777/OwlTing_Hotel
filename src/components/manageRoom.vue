@@ -27,8 +27,8 @@
               <table class="table table-condensed">
                 <tr>
                   <th>key(日期_房型)</th>
-                  <th>total</th>
-                  <th>soldout</th>
+                  <th>總房間數</th>
+                  <th>已售出房數</th>
                 </tr>
                 <tr v-for="data in Data">
                   <!-- django的格式{{ data.fields.key }} -->
