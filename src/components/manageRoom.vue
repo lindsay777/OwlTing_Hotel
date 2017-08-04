@@ -30,7 +30,7 @@
                   <th>總房間數</th>
                   <th>已售出房數</th>
                 </tr>
-                <tr v-for="data in Data">
+                <tr v-for="data in sortedArray">
                   <!-- django的格式{{ data.fields.key }} -->
                   <td>{{ data.key }}</td>
                   <td>{{ data.total }}</td>
@@ -76,6 +76,20 @@ export default {
           .catch(function (response) {
             console.log(response)
           })
+    }
+  },
+  computed: {
+    sortedArray: function () {
+      function compare (a, b) {
+        if (a.key < b.key) {
+          return -1
+        }
+        if (a.key > b.key) {
+          return 1
+        }
+        return 0
+      }
+      return this.Data.sort(compare)
     }
   }
 }

@@ -18,7 +18,7 @@
                 <th width=10%>動作</th>
                 <th width=10%> </th>
               </tr>
-              <tr v-for="data in Data">
+              <tr v-for="data in sortedArray">
                 <td>{{ data.order_id }}</td>
                 <td>{{ data.user_id }}</td>
                 <td>{{ data.date }}</td>
@@ -73,6 +73,20 @@ export default {
           .catch(function (response) {
             console.log(response)
           })
+    }
+  },
+  computed: {
+    sortedArray: function () {
+      function compare (a, b) {
+        if (a.date < b.date) {
+          return -1
+        }
+        if (a.date > b.date) {
+          return 1
+        }
+        return 0
+      }
+      return this.Data.sort(compare)
     }
   }
 }
